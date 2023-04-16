@@ -208,7 +208,7 @@ Query:
 ```bash
 db.listings.find().limit(10).pretty()
 ```
-I did put the ouput for 3 documents because each documnet had a lot of information. Getting 10 increase the output greatly.
+I did put the ouput for 3 documents because each documnet had a lot of information. Putting 10 increased the output greatly.
 ```bash
 db.listings.find().limit(3).pretty()
 ```
@@ -452,9 +452,8 @@ Output:
 
 
 3. This query is only getting us the `name`, `price`, `neighbourhood`, `host_name`, and `host_is_superhost` for each result(superhost). We are limiting our result to the coulmns which we need.
-<br>
-
 Query:
+
 ```bash
 db.listings.find({
     $and: [
@@ -468,6 +467,7 @@ db.listings.find({
   _id: 0
 })
 ```
+
 Output:
 <pre>
 [
@@ -496,10 +496,7 @@ Output:
 </pre>
 
 
-
-
 4. This query helps us get the total number of host, which will be impossible to get if we try doing it mechanically. We will be getting all the distinct hosts. 
-<br>
 
 Query:
 ```bash
@@ -548,7 +545,6 @@ Output:
 
 
 5. This query gives us the `name`, `beds`, `review_scores_rating`, and `price` of the places that have more than 2 `beds` in a neighborhood, Nashville, Tennessee, United States. We use the operator $gt and we get our result.
-<br>
 
 Query:
 ```bash
@@ -593,7 +589,6 @@ Output:
 </pre>
 
 6. Here we wanted to get the number of listings per host. So we are grouping by the host_id and they counting the listings. We are 
-<br>
 
 Query:
 ```bash
@@ -601,6 +596,9 @@ db.listings.aggregate([
   { $group: { _id: "$host_id", count: { $sum: 1 } } }
 ])
 ```
+
+Output: 
+
 <pre>
 [] { _id: 75621208, count: 1 },
   { _id: 355260892, count: 1 },
