@@ -1,8 +1,38 @@
 # AirBnB MongoDB Analysis
 
+## Data Set Details
+
+1. Origin: The data was taken from the Inside Airnb [AirBnB listings data](http://insideairbnb.com/get-the-data.html). I have chosen Nashville, so we have data about all the Airbnb hosts in the Nashville with other information that each of the listings have like utilities, locations, etc, which will be helpful for a customer. The link for Nahville data is [Nashville](http://insideairbnb.com/nashville)
+2. The data when downladed was in a .gz format which was later converted into csv.
+3. Presenting the data:
+<br>
+
+| id  | listing_url | scrape_id | last_scraped | source | name | description | neighborhood_overview | picture_url | host_id | host_url | host_name | host_since | host_location | host_about | host\_response\_time | host\_response\_rate | host\_acceptance\_rate | host\_is\_superhost | host\_thumbnail\_url | host\_picture\_url | host_neighbourhood | host\_listings\_count | host\_total\_listings_count | host_verifications | host\_has\_profile_pic | host\_identity\_verified | neighbourhood | neighbourhood_cleansed | neighbourhood\_group\_cleansed | latitude | longitude | property_type | room_type | accommodates | bathrooms | bathrooms_text | bedrooms | beds | amenities | price | minimum_nights | maximum_nights | minimum\_minimum\_nights | maximum\_minimum\_nights | minimum\_maximum\_nights | maximum\_maximum\_nights | minimum\_nights\_avg_ntm | maximum\_nights\_avg_ntm | calendar_updated | has_availability | availability_30 | availability_60 | availability_90 | availability_365 | calendar\_last\_scraped | number\_of\_reviews | number\_of\_reviews_ltm | number\_of\_reviews_l30d | first_review | last_review | review\_scores\_rating | review\_scores\_accuracy | review\_scores\_cleanliness | review\_scores\_checkin | review\_scores\_communication | review\_scores\_location | review\_scores\_value | license | instant_bookable | calculated\_host\_listings_count | calculated\_host\_listings\_count\_entire_homes | calculated\_host\_listings\_count\_private_rooms | calculated\_host\_listings\_count\_shared_rooms | reviews\_per\_month |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 6422 | https://www.airbnb.com/rooms/6422 | 2.02303E+13 | 3/19/23 | city scrape | Nashville Charm | 30 day plus ...d | Histo... | https://... | 12172 | https://... | Michele | 4/3/09 | Nashville, TN | My husband ... world. | within an hour | 100% | 0%  | f   | https://a0.muscache.com/im/users/12172/profile\_pic/1375806408/original.jpg?aki\_policy=profile_small | https://a0.muscache.com/im/users/12172/profile\_pic/1375806408/original.jpg?aki\_policy=profile\_x\_medium |     | 1   | 1   | \['phone'\] | t   | t   | Nashville, Tennessee, United States | District 6 |     | 36.17315 | -86.73581 | Private room in home | Private room | 1   |     | 1 private bath | 1   | 1   | \["Lock on bedroom door", "Iron", "Washer \\u2013\\u00a0In building", "Kayak", "Private living room", "Freezer", "Ethernet connection", "TV", "Mini fridge", "Luggage dropoff allowed", "Bathtub", ..."Heating", "Free driveway parking on premises \\u2013 1 space"\] | $43.00 | 30  | 365 | 30  | 30  | 365 | 365 | 30  | 365 |     | t   | 0   | 4   | 34  | 309 | 3/19/23 | 674 | 0   | 0   | 4/30/09 | 3/3/20 | 4.95 | 4.94 | 4.96 | 4.97 | 4.96 | 4.92 | 4.98 |     | f   | 1   | 0   | 1   | 0   | 3.99 |
+| 39870 | https://www.airbnb.com/rooms/39870 | 2.02303E+13 | 3/19/23 | city scrape | Close to Vanderbilt 2 | Since I am older, I need for guests to be vaccinated.  ...vaccinated. | The house is in a safe, quiet, "college" neighborhood. | https://a0.muscache.com/pictures/miso/Hosting-39870/original/2e51ef52-cb3b-4c2b-9972-8ce50b6acff7.jpeg | 171184 | https://www.airbnb.com/users/show/171184 | Evelyn | 7/18/10 | Nashville, TN | I am a newly retired elementary school teacher. I like to run, walk, ... shopping. | within an hour | 100% | 92% | t   | https://a0.muscache.com/im/users/171184/profile\_pic/1389073105/original.jpg?aki\_policy=profile_small | https://a0.muscache.com/im/users/171184/profile\_pic/1389073105/original.jpg?aki\_policy=profile\_x\_medium |     | 1   | 3   | \['email', 'phone'\] | t   | t   | Nashville, Tennessee, United States | District 18 |     | 36.12523 | -86.81278 | Private room in home | Private room | 2   |     | 1 private bath | 1   | 1   | \["Iron", "Keypad", "Luggage dropoff allowed", ..., "Carbon monoxide alarm", "Bed linens", "Microwave", "Hangers", "Heating"\] | $70.00 | 1   | 1125 | 1   | 1   | 1125 | 1125 | 1   | 1125 |     | t   | 5   | 17  | 30  | 174 | 3/19/23 | 349 | 68  | 1   | 9/16/16 | 2/26/23 | 4.94 | 4.96 | 4.95 | 4.99 | 4.97 | 4.95 | 4.94 |     | f   | 1   | 0   | 1   | 0   | 4.41 |
+| 3648549 | https://www.airbnb.com/rooms/3648549 | 2.02303E+13 | 3/20/23 | city scrape | Serene, Cozy Getaway; Lipscomb, Vanderbilt,12South | \*Our Airbnb is professionally cleaned & disinfected between each guest’s stay.\*  <br>  <br>As we say in the South "Y'all come on in, make yourself at home!"  <br>... LOCATION, | https://a0.muscache.com/pictures/482b8166-d993-48de-88ab-0f44918b7108.jpg | 931636 | https://www.airbnb.com/users/show/931636 | Debby | 8/6/11 | Nashville, TN | I am an out-going human ...with me? |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
 
 
-1. The query given below gives us the 2 listings from the listings collection. 
+
+
+
+4. Problems with my data was related to incomplete information. My data had blank/no information for the nrighborhood, which would have latter affected the result in the analysis. I used python to munge by data and get rid of rows with missing neighborhood details. or example in the host_id = 914787, the neighborhood was missing, so while munging it I removed it.
+```bash
+x = 0
+while x < len(information):
+    if information[x][13] == "": 
+        x += 1
+        continue
+    else:
+        new_information.append(information[x])
+        x += 1
+```
+
+
+## Analysis
+
+1. The query given below gives us the 2 listings from the listings collection. We are limiting the number which helps us getting only the number of documents we need.
 <br>
 Query:
 
@@ -20,7 +50,7 @@ Output:
     last_scraped: '2023-03-19',
     source: 'city scrape',
     name: 'Close to Vanderbilt 2',
-    description: 'Since I am older, I need for guests to be vaccinated.<br />This is a room and private bathroom in my cozy cottage near Vanderbilt and other area colleges. It is also close to the bus  or a short uber ride to downtown.   I do  have a petite boxer ,Grace. She stays in the kitchen downstairs .She is VERY friendly.<br />The bed is a double iron bed and may not be suitable for tall couples, since it has a foot board.<br /><br /><b>The space</b><br />Quiet house walking distance to Vanderbilt University. Comfortable room with private bathroom.<br /><br /><b>Other things to note</b><br />Since I am older and the room is in my home, I need for guests to be vaccinated.',
+    description: 'Since I am ....note</b><br />Since I am older and the room is in my home, I need for guests to be vaccinated.',
     neighborhood_overview: 'The house is in a safe, quiet,  "college" neighborhood.',
     picture_url: 'https://a0.muscache.com/pictures/miso/Hosting-39870/original/2e51ef52-cb3b-4c2b-9972-8ce50b6acff7.jpeg',
     host_id: 171184,
@@ -98,15 +128,14 @@ Output:
     last_scraped: '2023-03-19',
     source: 'city scrape',
     name: 'Nashville Charm',
-    description: "30 day plus rental - book for one month and then discuss longer rental option. Turn of century bungalow in East Nashville with city park, greenway and river behind house. Walk to shops, eateries and music venues. Downtown located 19 blocks away.  Rental unit is accessed through front door of home and located on second floor. The furnished space includes a combined sitting room with desk, kitchenette and wardrobe, a master bath with jacuzzi and shower, and a small bedroom with double bed.<br /><br /><b>The space</b><br />My husband and I have lived in our 1920's historic bungalow for almost 25 years. It backs up to city park with a 9 mile greenway along the river, is located 19 blocks from downtown (bus stop 3 doors away), within walking distance of hip East Nashville neighborhood eateries/clubs/shops and 1 block to golf course and tennis courts. Rental unit is accessed through front door of home and is located on second floor. The furnished space includes a combined sitting room with d",
-    neighborhood_overview: "Historic East Nashville is home to many new and old favorite eateries (from barbeque and meat-n-three's to French and Italian cuisine and everything in between- including beloved Mas Taco's and Prince's Hot Chicken), art galleries, music venues, wine bar, micro beer outlets, etc. Our home is 15 minutes from the airport, 19 blocks from downtown Nashville, backs up to Shelby Park with a duck pond and 9 mile greenway along the river, a public golf course at the end of the street and tennis court across the park opening. Some guests spend their time at the lower Broadway honkey-tonks while others enjoy the local eateries and small music venues throughout our Little-Five Points neighborhood. Within 15 minutes of most major universities, hospitals, drug and grocery stores and other needed services. East Nashville really does have it all!",
+    description: "30 day plus rental - book ...Within 15 minutes of most major universities, hospitals, drug and grocery stores and other needed services. East Nashville really does have it all!",
     picture_url: 'https://a0.muscache.com/pictures/miso/Hosting-6422/original/c1ff6506-8d8b-4ccf-927a-0e2275270879.jpeg',
     host_id: 12172,
     host_url: 'https://www.airbnb.com/users/show/12172',
     host_name: 'Michele',
     host_since: '2009-04-03',
     host_location: 'Nashville, TN',
-    host_about: "My husband and I are parents of 5 grown children, living in various places in the US attending school/working. We've lived in East Nashville for 20 years. My husband, Collier, is a recently retired public defender and I am self-employed, having previously worked with various non-profit organizations and continuing to mediate and write. Most of my non-profit work was with community-based economic development organizations, racial and social justice groups, mentally and physically challenged people and women-focused efforts. We especially like activists, artists, adventurers and visionaries, but anyone wanting to travel to Nashville and get a real feel for our small town/ city and its friendly inhabitants would be happy staying with us. We live a simple life and believe in radical hospitality because we are all visitors in this world.",
+    host_about: "My husband and I are parents of 5 grown children, living in various places in the US attending school/working. We've lived in East Nashville for 20 years. My husband, Collier, is a recently retired public ...all visitors in this world.",
     host_response_time: 'within an hour',
     host_response_rate: '100%',
     host_acceptance_rate: '0%',
@@ -171,7 +200,7 @@ Output:
 ]
 </pre>
 
-2. 
+2. In this query we are using the pretty() function. This helpes in putting the data/document in a way that is easy and convenient to read.
 <br>
 Query:
 ```bash
@@ -192,7 +221,7 @@ Output:
     last_scraped: '2023-03-19',
     source: 'city scrape',
     name: 'Close to Vanderbilt 2',
-    description: 'Since I am older, I need for guests to be vaccinated.<br />This is a room and private bathroom in my cozy cottage near Vanderbilt and other area colleges. It is also close to the bus  or a short uber ride to downtown.   I do  have a petite boxer ,Grace. She stays in the kitchen downstairs .She is VERY friendly.<br />The bed is a double iron bed and may not be suitable for tall couples, since it has a foot board.<br /><br /><b>The space</b><br />Quiet house walking distance to Vanderbilt University. Comfortable room with private bathroom.<br /><br /><b>Other things to note</b><br />Since I am older and the room is in my home, I need for guests to be vaccinated.',
+    description: 'Since I am older, I need for guests to be vaccinated.<br />This is a room and ...Other things to note</b><br />Since I am older and the room is in my home, I need for guests to be vaccinated.',
     neighborhood_overview: 'The house is in a safe, quiet,  "college" neighborhood.',
     picture_url: 'https://a0.muscache.com/pictures/miso/Hosting-39870/original/2e51ef52-cb3b-4c2b-9972-8ce50b6acff7.jpeg',
     host_id: 171184,
@@ -270,15 +299,14 @@ Output:
     last_scraped: '2023-03-19',
     source: 'city scrape',
     name: 'Nashville Charm',
-    description: "30 day plus rental - book for one month and then discuss longer rental option. Turn of century bungalow in East Nashville with city park, greenway and river behind house. Walk to shops, eateries and music venues. Downtown located 19 blocks away.  Rental unit is accessed through front door of home and located on second floor. The furnished space includes a combined sitting room with desk, kitchenette and wardrobe, a master bath with jacuzzi and shower, and a small bedroom with double bed.<br /><br /><b>The space</b><br />My husband and I have lived in our 1920's historic bungalow for almost 25 years. It backs up to city park with a 9 mile greenway along the river, is located 19 blocks from downtown (bus stop 3 doors away), within walking distance of hip East Nashville neighborhood eateries/clubs/shops and 1 block to golf course and tennis courts. Rental unit is accessed through front door of home and is located on second floor. The furnished space includes a combined sitting room with d",
-    neighborhood_overview: "Historic East Nashville is home to many new and old favorite eateries (from barbeque and meat-n-three's to French and Italian cuisine and everything in between- including beloved Mas Taco's and Prince's Hot Chicken), art galleries, music venues, wine bar, micro beer outlets, etc. Our home is 15 minutes from the airport, 19 blocks from downtown Nashville, backs up to Shelby Park with a duck pond and 9 mile greenway along the river, a public golf course at the end of the street and tennis court across the park opening. Some guests spend their time at the lower Broadway honkey-tonks while others enjoy the local eateries and small music venues throughout our Little-Five Points neighborhood. Within 15 minutes of most major universities, hospitals, drug and grocery stores and other needed services. East Nashville really does have it all!",
+    description: "30 day plus rental - book for one month and then discuss longer rental option. Turn ...the lower Broadway honkey-tonks while others enjoy the local eateries and small music venues throughout our Little-Five Points neighborhood. Within 15 minutes of most major universities, hospitals, drug and grocery stores and other needed services. East Nashville really does have it all!",
     picture_url: 'https://a0.muscache.com/pictures/miso/Hosting-6422/original/c1ff6506-8d8b-4ccf-927a-0e2275270879.jpeg',
     host_id: 12172,
     host_url: 'https://www.airbnb.com/users/show/12172',
     host_name: 'Michele',
     host_since: '2009-04-03',
     host_location: 'Nashville, TN',
-    host_about: "My husband and I are parents of 5 grown children, living in various places in the US attending school/working. We've lived in East Nashville for 20 years. My husband, Collier, is a recently retired public defender and I am self-employed, having previously worked with various non-profit organizations and continuing to mediate and write. Most of my non-profit work was with community-based economic development organizations, racial and social justice groups, mentally and physically challenged people and women-focused efforts. We especially like activists, artists, adventurers and visionaries, but anyone wanting to travel to Nashville and get a real feel for our small town/ city and its friendly inhabitants would be happy staying with us. We live a simple life and believe in radical hospitality because we are all visitors in this world.",
+    host_about: "My husband and I are parents of 5 grown children, living in various places in the US ...believe in radical hospitality because we are all visitors in this world.",
     host_response_time: 'within an hour',
     host_response_rate: '100%',
     host_acceptance_rate: '0%',
@@ -347,16 +375,14 @@ Output:
     last_scraped: '2023-03-20',
     source: 'city scrape',
     name: 'Serene, Cozy Getaway; Lipscomb, Vanderbilt,12South',
-    description: `*Our Airbnb is professionally cleaned & disinfected between each guest’s stay.*<br /><br />As we say in the South "Y'all come on in, make yourself at home!"<br />Create great memories in Music City & stay at Margie's Hideaway-850 sq. ft. Studio-with private entrance on lower floor.  It is a walk in basement and you will probabky hear us at times. You have completed privacy.<br />*NOTE-Not suitable for children under 12 years old<br /><br /><b>The space</b><br />ENTIRE BOTTOM FLOOR<br />     * Welcoming living room space <br />     * Queen bed with fresh, white linens<br />     * Two twin beds in great room<br />     * Central air conditioner/heat(Thermastat on main floor)<br />     * Kitchenette (microwave only)<br />     * Keurig coffeemaker<br />     * Variety of coffee/tea K-cups<br />     * Private, clean bathroom<br />     * Shower<br />     * Hairdryer<br />     * White, freshly laundered towels<br />     * Self check-in/out<br />     ** Step free access-no pulling luggage up ste`,
-    neighborhood_overview: "Green Hills is a PRIME location and much sought after area of town! <br /> It is about 5-20 minutes from here to anywhere you want to go while you are in Nashville.  * A 5 -7 minute walk away is public transportation. <br /><br />GROCERY STORES,RESTAURANTS, AND MALL:<br />**Only 1.4 miles away are TRADER JOE's<br />** WHOLE FOODS and Whole Foods Health in the Hill Center<br />** Kroger<br />** GREEN HIILLS MALL (Nordstroms, Tiffanys, Aveda, The Loft, Apple Store, etc.)<br />** JET'S Pizza (delivers), GREEN HILLS GRILLE (delivers), Kohana, Which Wich, Wendy's (for the Frosty lovers!), Cheesecake Factory Restaurant, Caraba's, Panera Bread, Zoe's, California Pizza, Chipotle, JUST to name a few.<br />**Bank of America, Regions Bank, First Tennessee Bank, U.S. Bank and more.<br /><br />EXERCISE:<br />**Attention! RUNNERS and WALKERS: There is an outdoor track right beside our house on Lipscomb's High School athletic field that is available for your free use. <br /><br />LOCATION, LOCATION, ",
+    description: `*Our Airbnb is professionally cleaned & disinfected between each guest’s stay.*<br /><br />As we say in the South "Y'all come on in, make yourself at home!"<br />Create great ...track right beside our house on Lipscomb's High School athletic field that is available for your free use. <br /><br />LOCATION, LOCATION, ",
     picture_url: 'https://a0.muscache.com/pictures/482b8166-d993-48de-88ab-0f44918b7108.jpg',
     host_id: 931636,
     host_url: 'https://www.airbnb.com/users/show/931636',
     host_name: 'Debby',
     host_since: '2011-08-06',
     host_location: 'Nashville, TN',
-    host_about: "I am an out-going human being who believes that what I give out to the world comes back to me. I am loving, honest, friendly, funny. I am an Office Administrator for a pediatric dentist, a former country music performer with my mother, 'Marge and Debby Rhoads, The Country Rhoads' and and AIRBNB host! Traveling is one of my passions.  I enjoy meeting new people. My hobbies: sewing, reading, singing, traveling, great movies, people watching, nature, helping people, reading self-help books, live music, plays, etc., etc., etc. One of my many goals is to climb Mt. Kilimanjaro in Africa. Anyone want to go with me? \n" +
-      "I believe you will enjoy Margie's Hideaway. I named my Airbnb after my beautiful, talented, one-of-a-kind mother! Our Airbnb is about a 7 minute stroll to Lipscomb University/Academy campus. I went to school there 7th grade through college. So did my brother. My father was a Speech Professor there for many years. Our house is so close to Lipscomb I walked to school, ballgames, functions through sun, wind, rain, snow, sleet, and whatever came our way and BOY what great memories!",
+    host_about: "I am an out-going human being who believes that what I give out to the world comes ...wind, rain, snow, sleet, and whatever came our way and BOY what great memories!",
     host_response_time: 'within an hour',
     host_response_rate: '100%',
     host_acceptance_rate: '100%',
@@ -423,60 +449,52 @@ Output:
 </pre>
 
 
-3. 
+3. This query is only getting us the `name`, `price`, `neighbourhood`, `host_name`, and `host_is_superhost` for each result(superhost). We are limiting our result to the coulmns which we need.
 Query:
 ```bash
+db.listings.find({
+    $and: [
+  {host_id: { $in: [ 171184, 931636 ] }}]
+}, {
+  name: 1,
+  price: 1,
+  neighbourhood: 1,
+  host_name: 1,
+  host_is_superhost: 1,
+  _id: 0
+})
 ```
-</pre>
 Output:
 <pre>
+[
+  {
+    name: 'Close to Vanderbilt 2',
+    host_name: 'Evelyn',
+    host_is_superhost: 't',
+    neighbourhood: 'Nashville, Tennessee, United States',
+    price: '$70.00'
+  },
+  {
+    name: 'Serene, Cozy Getaway; Lipscomb, Vanderbilt,12South',
+    host_name: 'Debby',
+    host_is_superhost: 't',
+    neighbourhood: 'Nashville, Tennessee, United States',
+    price: '$143.00'
+  },
+  {
+    name: 'Close to Vanderbilt 2',
+    host_name: 'Evelyn',
+    host_is_superhost: 't',
+    neighbourhood: 'Nashville, Tennessee, United States',
+    price: '$70.00'
+  }
+]
 </pre>
-db.listings.find(
-  { $and: [
-    {host_id: { $in: [39870, 3648549] }}]
-  },
-  { 
-    name: 1,
-    price: 1,
-    neighbourhood: 1,
-    host_name: 1,
-    host_is_superhost: 1,
-    _id: 0
-  }
-)
 
 
-```bash
-db.listings.find(
-  { 
-    "host_id":  {430052, 3648549}
-  },
-  { 
-    "name": 1,
-    "price": 1,
-    "neighbourhood": 1,
-    "host_name": 1,
-    "host_is_superhost": 1,
-    "_id": 0
-  }
-)
 
-db.listings.find(
-  { 
-    "host_id": { "$in": [430052, 3648549] }
-  },
-  { 
-    "name": 1,
-    "price": 1,
-    "neighbourhood": 1,
-    "host_name": 1,
-    "host_is_superhost": 1,
-    "_id": 0
-  }
-)
-```
 
-4. This query helps us get the total number of host, which will be impossible to gwt if we try doing it individually.
+4. This query helps us get the total number of host, which will be impossible to get if we try doing it mechanically. We will be getting all the distinct hosts. 
 Query:
 ```bash
 db.listings.distinct("host_name")
@@ -523,21 +541,22 @@ Output:
 </pre>
 
 
-5. 
+5. This query gives us the `name`, `beds`, `review_scores_rating`, and `price` of the places that have more than 2 `beds` in a neighborhood, Nashville, Tennessee, United States. We use the operator $gt and we get our result.
+<br>
 Query:
 ```bash
 db.listings.find(
   {
-    "$and": [
-    { "neighbourhood": "Nashville, Tennessee, United States" },
-    {"beds": { "$gt": 2 }}]
+    $and: [
+    { neighbourhood: "Nashville, Tennessee, United States" },
+    {beds: { $gt: 2 }}]
   },
   {
-    "name": 1,
-    "beds": 1,
-    "review_scores_rating": 1,
-    "price": 1,
-    "_id": 0
+    name: 1,
+    beds: 1,
+    review_scores_rating: 1,
+    price: 1,
+    _id: 0
   }
 ).sort({ "review_scores_rating": -1 })
 ```
@@ -566,7 +585,22 @@ Output:
 ]
 </pre>
 
-6. 
+6. Here we wanted to get the number of listings per host. So we are grouping by the host_id and they counting the listings. We are <br>
+Query:
+
+```bash
+db.listings.aggregate([
+  { $group: { _id: "$host_id", count: { $sum: 1 } } }
+])
+```
+<pre>
+[] { _id: 75621208, count: 1 },
+  { _id: 355260892, count: 1 },
+  { _id: 31778647, count: 1 }
+  ]
+</pre>
+
+If we put the sorting function to get the host with the most number of listings.<br>
 Query:
 ```bash
 db.listings.aggregate([
@@ -583,15 +617,18 @@ Output:
 ]
 </pre>
 
-7.  
+
+7.  Here we are get the average rating according to each of the neighborhood. I do not have any empty neighborhood because I munged the rows which no information about the neighborhood. We are only showing the neighborhood that has avergae rating of 95%5, since all the ratings are out of 5.
+<br>
+Query:
 ```bash
     db.listings.aggregate([
   { $match: { review_scores_rating: { $gt: 95%5 } } },
   { $group: { _id: "$neighbourhood", average_rating: { $avg: "$review_scores_rating" } } },
   { $sort: { average_rating: -1 } }
 ])
-- I am sorting here according to the average rating and because in my data set the rating were given out of 5, I am printing data that has rating avove 95% of 5.
 ```
+- I am sorting here according to the average rating and because in my data set the rating were given out of 5, I am printing data that has rating avove 95% of 5.
 
 Output:
 <pre>
@@ -604,3 +641,9 @@ Output:
   }
 ]
 </pre>
+
+
+
+#### Describe any insights the analysis shows that may not be obvious to someone just viewing the raw data:
+
+In the data we used fuction like aggregate, distinct, avergae and then we also used group by for on of the quet. This helps in calculating data with a very large data with no fixed schema, quickly and efficiently. 
