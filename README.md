@@ -39,6 +39,7 @@ Query:
 ```bash
 db.listings.find().limit(2)
 ```
+
 Output:
 <pre>
 [
@@ -202,6 +203,7 @@ Output:
 
 2. In this query we are using the pretty() function. This helpes in putting the data/document in a way that is easy and convenient to read.
 <br>
+
 Query:
 ```bash
 db.listings.find().limit(10).pretty()
@@ -450,6 +452,8 @@ Output:
 
 
 3. This query is only getting us the `name`, `price`, `neighbourhood`, `host_name`, and `host_is_superhost` for each result(superhost). We are limiting our result to the coulmns which we need.
+<br>
+
 Query:
 ```bash
 db.listings.find({
@@ -495,6 +499,8 @@ Output:
 
 
 4. This query helps us get the total number of host, which will be impossible to get if we try doing it mechanically. We will be getting all the distinct hosts. 
+<br>
+
 Query:
 ```bash
 db.listings.distinct("host_name")
@@ -543,6 +549,7 @@ Output:
 
 5. This query gives us the `name`, `beds`, `review_scores_rating`, and `price` of the places that have more than 2 `beds` in a neighborhood, Nashville, Tennessee, United States. We use the operator $gt and we get our result.
 <br>
+
 Query:
 ```bash
 db.listings.find(
@@ -585,9 +592,10 @@ Output:
 ]
 </pre>
 
-6. Here we wanted to get the number of listings per host. So we are grouping by the host_id and they counting the listings. We are <br>
-Query:
+6. Here we wanted to get the number of listings per host. So we are grouping by the host_id and they counting the listings. We are 
+<br>
 
+Query:
 ```bash
 db.listings.aggregate([
   { $group: { _id: "$host_id", count: { $sum: 1 } } }
@@ -620,6 +628,7 @@ Output:
 
 7.  Here we are get the average rating according to each of the neighborhood. I do not have any empty neighborhood because I munged the rows which no information about the neighborhood. We are only showing the neighborhood that has avergae rating of 95%5, since all the ratings are out of 5.
 <br>
+
 Query:
 ```bash
     db.listings.aggregate([
