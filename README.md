@@ -654,4 +654,4 @@ Output:
 
 #### Describe any insights the analysis shows that may not be obvious to someone just viewing the raw data:
 
-In the data we used fuction like aggregate, distinct, avergae and then we also used group by for on of the quet. This helps in calculating data with a very large data with no fixed schema, quickly and efficiently. 
+In the data we used function like aggregate, distinct, avergae and then we also used group by for on of the quet. This helps in calculating data with a very large data with no fixed schema, quickly and efficiently. The best thing about using mongoDb is that we do not need a fixed schema, we can work without it with functions like aggregate, average, etc. 
