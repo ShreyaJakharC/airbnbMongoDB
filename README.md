@@ -453,6 +453,7 @@ Output:
 
 
 3. This query is only getting us the `name`, `price`, `neighbourhood`, `host_name`, and `host_is_superhost` for each result(superhost). We are limiting our result to the coulmns which we need.
+
 Query:
 
 ```bash
